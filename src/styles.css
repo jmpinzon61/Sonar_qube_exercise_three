@@ -1,3 +1,22 @@
-body { background: #f7f7f7; margin:0; padding:0; }
-textarea { minHeight: 80px; width: 100%; font-family: monospace; }
-input, select, button { padding:6px; }
+body { 
+  background: #f7f7f7; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/*
+  - SonarQube reportó el error "Unexpected unknown property 'minHeight'".
+  - Esto ocurre porque en CSS las propiedades deben estar en kebab-case,
+    no en camelCase como se hace en JavaScript.
+  - Reemplaze "minHeight" por "min-height", que es la propiedad válida.
+  - Este cambio mejora la fiabilidad del estilo y evita comportamientos inesperados.
+*/
+textarea { 
+  min-height: 80px;   /* Propiedad corregida según estándares CSS */
+  width: 100%; 
+  font-family: monospace;
+}
+
+input, select, button { 
+  padding: 6px; 
+}
